@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import DatePickerModal from './DatePickerModal';
 
 function getDateKey(value) {
@@ -220,19 +221,19 @@ export default function Dashboard({
           </div>
 
           <div className="flex items-center space-x-6 text-sm">
-            <a
-              href="#"
+            <Link
+              href="/"
               className="hover:text-gray-300 transition"
             >
               Home
-            </a>
+            </Link>
 
-            <a
-              href="#"
+            <Link
+              href="/about"
               className="hover:text-gray-300 transition"
             >
               About us
-            </a>
+            </Link>
 
             <button
               aria-label="Search"
