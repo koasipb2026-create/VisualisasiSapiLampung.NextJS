@@ -7,6 +7,7 @@ const photoFiles = [
   'Fadhlullah Zakly Permana, S.K.H (B0901251084).jpg',
   'Fathia Azka Qolbi S.K.H. (B0901251061).png',
   'Muh.Riswan Hidayat Idrus, S.K.H (B0901211046).JPG',
+  'Nur Fajriansyah, S.K.H (B0901251034).png',
   'Pintan Nur Fallah, S.K.H (B0901211075).jpg',
 ];
 
@@ -73,17 +74,12 @@ export default function AboutPage() {
         </section>
         <section className="mt-12 border-t border-gray-300 pt-8">
           <h2 className="mb-9 text-center text-xl italic text-[#182b69]">Get to know us!</h2>
-          <div className="grid grid-cols-1 gap-x-7 gap-y-12 sm:grid-cols-2 lg:grid-cols-6">
-            {photoFiles.map((fileName, index) => {
+          <div className="grid grid-cols-1 gap-x-7 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+            {photoFiles.map((fileName) => {
               const student = getStudentDetails(fileName);
-              const desktopPosition = index > 2
-                ? index === 3
-                  ? 'lg:col-start-2'
-                  : 'lg:col-start-4'
-                : '';
 
               return (
-                <article key={fileName} className={`text-center lg:col-span-2 ${desktopPosition}`}>
+                <article key={fileName} className="text-center">
                   <div className="relative aspect-[4/5] overflow-hidden bg-gray-100">
                     <Image src={`/FotoMahasiswa/${fileName}`} alt={`Foto ${student.name}`} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover object-top" />
                   </div>
